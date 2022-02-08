@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+        }
+        .accordian_container {
+            padding: 30px 200px;
+            background-color: aquamarine;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            row-gap: 1.5rem;
+            column-gap: 1.5rem;
+        }
+        .accordian_group{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            column-gap: 3rem;
+            row-gap: 2rem;
+        }
+        .accordian_item {
+            background-color: white;
+            /* width: 25%; */
+            padding: 20px;
+        }
+
+        .accordian_title {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .accordian_content {
+            transition: .3s;
+            /* padding:15px; */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .open_accordian {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordian_container">
+        <div class="accordian_group">
+            <div class="accordian_item">
+                <div class="accordian_title">title_아코디언연습1</div>
+                <div class="accordian_content">
+                    content_아코디언 내용ㅇ니러이러미아ㅓㄻ;ㅣ아러;ㅁ이ㅏ럼;ㅣ아ㅓㄹㅇㄹ
+                    밍라ㅓㅁ;ㅣ라ㅓ;ㅇ미ㅏ러;미아ㅓㄹ;미ㅏ얼;미ㅏㄹ엄;ㅣㅏ얼;미ㅏ어린ㅁ알
+                    ㅇㄴㅁ리;ㅏ머리머리;마ㅓ리멂;ㅣㅏ런ㅇ미ㅏ럴
+                </div>
+            </div>
+
+            <div class="accordian_item">
+                <div class="accordian_title">title_아코디언연습2</div>
+                <div class="accordian_content">
+                    content_아코디언 내용ㅇ니러이러미아ㅓㄻ;ㅣ아러;ㅁ이ㅏ럼;ㅣ아ㅓㄹㅇㄹ
+                    밍라ㅓㅁ;ㅣ라ㅓ;ㅇ미ㅏ러;미아ㅓㄹ;미ㅏ얼;미ㅏㄹ엄;ㅣㅏ얼;미ㅏ어린ㅁ알
+                    ㅇㄴㅁ리;ㅏ머리머리;마ㅓ리멂;ㅣㅏ런ㅇ미ㅏ럴
+                </div>
+            </div>
+        </div>
+        <div class="accordian_group">
+            <div class="accordian_item">
+                <div class="accordian_title">title_아코디언연습3</div>
+                <div class="accordian_content">
+                    content_아코디언 내용ㅇ니러이러미아ㅓㄻ;ㅣ아러;ㅁ이ㅏ럼;ㅣ아ㅓㄹㅇㄹ
+                    밍라ㅓㅁ;ㅣ라ㅓ;ㅇ미ㅏ러;미아ㅓㄹ;미ㅏ얼;미ㅏㄹ엄;ㅣㅏ얼;미ㅏ어린ㅁ알
+                    ㅇㄴㅁ리;ㅏ머리머리;마ㅓ리멂;ㅣㅏ런ㅇ미ㅏ럴
+                </div>
+            </div>
+
+            <div class="accordian_item">
+                <div class="accordian_title">title_아코디언연습4</div>
+                <div class="accordian_content">
+                    content_아코디언 내용ㅇ니러이러미아ㅓㄻ;ㅣ아러;ㅁ이ㅏ럼;ㅣ아ㅓㄹㅇㄹ
+                    밍라ㅓㅁ;ㅣ라ㅓ;ㅇ미ㅏ러;미아ㅓㄹ;미ㅏ얼;미ㅏㄹ엄;ㅣㅏ얼;미ㅏ어린ㅁ알
+                    ㅇㄴㅁ리;ㅏ머리머리;마ㅓ리멂;ㅣㅏ런ㅇ미ㅏ럴
+                </div>
+            </div>
+        </div>
+        <div class="accordian_group">
+            <div class="accordian_item">
+                <div class="accordian_title">title_아코디언연습5</div>
+                <div class="accordian_content">
+                    content_아코디언 내용ㅇ니러이러미아ㅓㄻ;ㅣ아러;ㅁ이ㅏ럼;ㅣ아ㅓㄹㅇㄹ
+                    밍라ㅓㅁ;ㅣ라ㅓ;ㅇ미ㅏ러;미아ㅓㄹ;미ㅏ얼;미ㅏㄹ엄;ㅣㅏ얼;미ㅏ어린ㅁ알
+                    ㅇㄴㅁ리;ㅏ머리머리;마ㅓ리멂;ㅣㅏ런ㅇ미ㅏ럴
+                </div>
+            </div>
+
+            <div class="accordian_item">
+                <div class="accordian_title">title_아코디언연습6</div>
+                <div class="accordian_content">
+                    content_아코디언 내용ㅇ니러이러미아ㅓㄻ;ㅣ아러;ㅁ이ㅏ럼;ㅣ아ㅓㄹㅇㄹ
+                    밍라ㅓㅁ;ㅣ라ㅓ;ㅇ미ㅏ러;미아ㅓㄹ;미ㅏ얼;미ㅏㄹ엄;ㅣㅏ얼;미ㅏ어린ㅁ알
+                    ㅇㄴㅁ리;ㅏ머리머리;마ㅓ리멂;ㅣㅏ런ㅇ미ㅏ럴
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+        const accordianItem = document.querySelectorAll(".accordian_item");
+        // title누르면 클래스 추가 content높이 scrollHeight만큼 늘어나고 
+        // 나머지 item들 클래스 제거
+        accordianItem.forEach((ele) => {
+            const accordianTitle = ele.querySelector(".accordian_title")
+            accordianTitle.addEventListener("click", () => {
+                const openCss = document.querySelector(".open_accordian");
+                open(ele);
+                if(openCss!=ele){
+                    open(openCss);
+                }
+            })
+        })
+        
+        function open(ele){
+            var accordianContent = ele.querySelector(".accordian_content");
+            if(ele.classList.contains("open_accordian")){
+                     accordianContent.removeAttribute("style");
+                    ele.classList.remove("open_accordian");
+                }else{
+                    ele.classList.add("open_accordian");
+                    accordianContent.style.height = accordianContent.scrollHeight + "px";
+                }
+        }
+      
+    </script>
+</body>
+
+</html>

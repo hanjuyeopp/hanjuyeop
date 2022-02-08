@@ -1,0 +1,915 @@
+/* ===========================GOOGLE FONT================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+/* ===========================VARIABLES CSS================================ */
+:root{
+    --header-height: 3.5rem; /*56px*/
+
+    /* ===color=== */
+    /* hsl(hue, saturation, lightness) */
+    --hue:152;
+    --first-color:hsl(var(--hue),24%,32%);
+    --first-color-alt:hsl(var(--hue),24%,28%);
+    --first-color-light:hsl(var(--hue),24%,66%);
+    --first-color-lighten:hsl(var(--hue),24%,92%);
+    --title-color:hsl(var(--hue),4%,15%);
+    --text-color:hsl(var(--hue),4%,35%);
+    --text-color-light:hsl(var(--hue),4%,55%);
+    --body-color:hsl(var(--hue),0%,100%);
+    --container-color:#fff;
+    
+    /* ===font and typography=== */
+    /* .5rem : 8px  /1rem = 16px */
+    /* 더 자세히는 px to rem검색 */
+    --body-font:'Poppins', sans-serif;
+    --big-font-size:2rem;
+    --h1-font-size:1.5rem;
+    --h2-font-size:1.25rem;
+    --h3-font-size:1rem;
+    --normal-font-size:.938rem;
+    --small-font-size:.813rem;
+    --smaller-font-size:.75rem;
+
+    /* ===font weight=== */
+    --font-medium:500;
+    --font-semi-bold:700;
+
+    /* ===margin bottom */
+    --mb-0-5:.5rem;
+    --mb-0-75:.75rem;
+    --mb-1:1rem;
+    --mb-1-5:1.5rem;
+    --mb-2:2rem;
+    --mb-2-5:2.5rem;
+
+    /* ===z-index=== */
+    --z-tooltip:10;
+    --z-fixed:100;
+}/*:root*/
+
+/* Resposive typography */
+/* 968이상일때 */
+@media screen and (min-width:968px) {
+  :root{
+    --big-font-size:3.5rem;
+    --h1-font-size:2.25rem;
+    --h2-font-size:1.5rem;
+    --h3-font-size:1.25rem;
+    --normal-font-size:1rem;
+    --small-font-size:.875rem;
+    --smaller-font-size:.813px;
+    }
+}
+
+/* ===========================BASE================================ */
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color:var(--text-color);
+    background-color: var(--body-color);
+    transition:0.3s;
+}
+button{
+    cursor: pointer;
+    border:none;
+    outline:none;
+}
+h1,h2,h3{
+    color:var(--title-color);
+    font-weight:var(--font-semi-bold);
+}
+
+ul{
+    list-style:none;
+}
+a{
+    text-decoration: none;
+    
+}
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* ===========================REUSABLE CSS CLASSES================================ */
+.section{
+    /*  */
+    padding:5.5rem 0 1rem;
+}
+.section_title,.section_title_center{
+    font-size:var(--h2-font-size);
+    margin-bottom: var(--mb-2);
+    line-height: 140%;
+}
+.section_title_center{
+    text-align: center;
+}
+
+/* container grid */
+/* container grid */
+.container{
+    /*media query size*/
+    max-width:968px;
+    margin-left:var(--mb-1-5);
+    margin-right:var(--mb-1-5);
+}
+/* grid=> 익스에서 안돼서 잘 안씀? */
+.grid{
+    display:grid;
+    gap:1.5rem;
+}
+.main{
+    overflow:hidden;/*for animation ?????*/
+}
+
+/* ===========================HEADER================================ */
+.header{
+    width: 100%;
+    background-color:var(--body-color);
+    position:fixed;
+    top:0;left:0;
+    z-index: var(--z-fixed);
+    transition: .3s;
+}
+.scroll_header{
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+/* ===========================NAV================================ */
+.nav{
+    height:var(--header-height);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_logo,.nav_close,.nav_toggle{
+    color:var(--title-color);
+}
+.nav_logo{
+    text-transform: uppercase;/*대문자*/
+    font-weight: var(--font-semi-bold);
+    letter-spacing: -1px;
+    display: block;
+    padding: 10px;
+    /* display: inline-flex; */
+    /* align-items: center; */
+    /* column-gap: .5rem; */
+    transition:.3s;
+}
+.nav_logo_icon{
+    font-size:1.15rem;
+    color:var(--first-color);
+}
+.nav_logo:hover{
+    color:var(--first-color);
+}
+.nav_toggle{
+    /* display: block; */
+    font-size:1.25rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width:767px) {
+    .nav_menu{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:80%;
+        height:100%;
+        background-color: var(--container-color);
+        box-shadow: -2px 0 4px hsla(var(--hue),24%,15%,0.1 ) ;
+        padding:4rem 0 0 3rem;
+        z-index: var(--z-fixed);
+        border-radius: 1rem 0 0 1rem;
+        transition:.3s;
+    }
+}
+
+.nav_list{
+    display:flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+.nav_link{
+    color:var(--text-color-light);
+    font-weight:var(--font-semi-bold);
+    text-transform: uppercase;
+}
+.nav_link:hover{
+    color:var(--text-color);
+}
+.nav_close{
+    position:absolute;
+    top:.75rem;
+    right: 1rem;
+    font-size:1.15rem;
+    cursor:pointer;
+}
+/* show menu */
+.show_menu{
+    right: 0;
+}
+/* active link */
+/* active link */
+.active_link{
+    position:relative;
+    color:var(--first-color);
+}
+.active_link::after{
+    content:"";
+    position: absolute;
+    width:100%;
+    height:2px;
+    left:0;
+    bottom: -.5rem;
+    background-color: var(--first-color);
+}
+/* ===========================HOME================================ */
+.home{
+    padding:3.5rem 0 2rem;
+}
+.home_container{
+    /*  */
+    /*  */
+    /*  */
+    /* 원래 그리드인데 안쓸거니가 콜롬씀 
+    근데 화면비율늘려도 계속 콜롬일경우엔는... */
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.home_img{
+    /* width:200px; */
+    /* justify-self:center; */
+}
+.home_title{
+    font-size: var(--h1-font-size);
+    line-height: 140%;
+    margin-bottom: var(--mb-1);
+}
+.home_description{
+    margin-bottom:var(--mb-2-5);
+}
+.home_social{
+    position:absolute;
+    top:8rem;
+    right:-0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    row-gap: 5rem;
+}
+.home_social_follow{
+    font-weight: var(--font-medium);
+    font-size:var(--smaller-font-size);
+    color:var(--first-color);
+    transform:rotate(90deg);
+    position:relative;
+}
+.home_social_follow::after{
+    content: "";
+    position:absolute;
+    top:50%;left:120%;
+    width:1rem;
+    height:2px;
+    background-color: var(--first-color);
+}
+.home_social_links{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.home_social_link{
+    color:var(--first-color);
+    font-size:1rem;
+    transition: .3s;
+}
+.home_social_link:hover{
+    transform: translateX(.25rem);
+}
+/* ===========================BUTTON================================ */
+.button{
+    display:inline-block;
+    background-color: var(--first-color);
+    color:white;
+    padding:1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+    transition: .3s;
+}
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+.button_icon{
+    transition: .3s;
+}
+.button:hover .button_icon{
+    transform:translateX(0.25rem);
+}
+.button_flex{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+.button_link{
+    color:var(--first-color);
+    font-weight: var(--font-medium);
+}
+.button_link:hover .button_icon{
+    transform: translateX(0.25rem);
+}
+/* ===========================ABOUT================================ */
+.about_container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.about_img{
+    /* justify-self: center; */
+}
+.about_title{
+    margin-bottom: var(--mb-1);
+}
+.about_description{
+    margin-bottom: var(--mb-2);
+}
+.about_details>p{
+    margin-bottom:var(--mb-2-5);
+    display: inline-flex;
+    column-gap: .5rem;
+    font-size:var(--small-font-size)
+}
+.about_details_icon{
+    font-size:1rem;
+    color:var(--first-color);
+}
+
+/* ===========================STEPS================================ */
+.steps_bg{
+    background-color: var(--first-color);
+    padding:3rem 2rem 2rem;
+    border-radius: 1rem;
+}
+.steps_title{
+    color:#fff;
+}
+.steps_card{
+    background-color: var(--container-color);
+    margin-bottom:1.5rem;
+    padding:2.5rem 3rem 2rem 1.5rem;
+    border-radius: 1rem;
+}
+.steps_card_number{
+    display: inline-block;
+    background-color:var(--first-color-alt);
+    color:#fff;
+    padding:.5rem .75rem;
+    border-radius: 0.25rem;
+    font-size:var(--h2-font-size);
+    margin-bottom: var(--mb-1-5);
+    transition: .3s;
+}
+.steps_card_title{
+    font-size:var(--h3-font-size);
+    margin-bottom:var(--mb-0-5);
+}
+.steps_card_description{
+    font-size: var(--small-font-size);
+}
+.steps_card:hover .steps_card_number{
+    transform: translateY(-.25rem);
+}
+
+/* ===========================grid 공부하기!!================================ */
+/* ===========================PRODUCTS================================ */
+.product_description{
+    text-align: center;
+}
+
+.product_container{
+    display: grid;
+    padding:3rem 0;
+    grid-template-columns: repeat(2,1fr);
+    gap:2.5rem  3rem;
+}
+.product_card{
+    display: grid;
+    position:relative;
+}
+.product_img{
+    /* position:relative; */
+    transition: .3s;
+    width:120px;
+    justify-self: center;
+} 
+.product_title,.product_price{
+    font-size: var(--small-font-size);
+    font-weight:600;
+    color:var(--title-color);
+}
+.product_title{
+    margin-bottom:.5rem;
+    margin-top:.8rem;
+}
+.product_button{
+    position:absolute;
+    right:0;
+    bottom:0;
+    background-color:var(--first-color);
+    color:#fff;
+    border-radius: .35rem;
+    padding:.25rem;
+    font-size:1.15rem;
+}
+.product_button:hover{
+    background-color: var(--first-color-alt);
+}
+
+.product_circle{
+    width:90px;
+    height:90px;
+    background-color: var(--first-color-lighten);
+    border-radius: 50%;
+    position:absolute;
+    top:18%;
+    left:5%;
+    z-index: -1;
+    transition: 0.3s;
+}
+.product_card:hover .product_img{
+    transform: translateY(-.5rem);
+}
+
+/* ===========================QUESTIONS================================ */
+.questions{
+    background-color: var(--first-color-lighten);
+}
+.question_container{
+    display: grid;
+    gap:1.5rem;
+    padding:1.5rem 0;
+}
+.question_group{
+    display: grid;
+    row-gap: 1.5rem;
+}
+.question_item{
+    background-color: var(--container-color);
+    border-radius: .25rem;
+}
+.question_item_title{
+    font-size:var(--small-font-size);
+    /* font-weight:var(--font-semi-bold); */
+    font-weight:var(--font-medium);
+}
+.question_icon{
+    font-size:1.25rem;
+    color:var(--title-color);
+}
+.question_description{
+    font-size:var(--smaller-font-size);
+    padding: 0 1.25rem 1.25rem 1.25rem;
+}
+.question_header{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    padding:0.75rem .5rem;
+    cursor:pointer;
+}
+.question_content{
+    overflow:hidden;
+    height:0;
+}
+.question_item,
+.question_header,
+.question_icon,
+.question_item_title,
+.question_content,
+.question_content{
+    transition: 0.3s;
+}
+.question_item:hover{
+    box-shadow:0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/*ROTATE ICON, CHANGE COLOR OF TITLE AND BACKGROUND*/
+.accordian-open .question_header,
+.accordian-open .question_content{
+    background-color: var(--first-color);
+}
+.accordian-open .question_icon,
+.accordian-open .question_item_title,
+.accordian-open .question_description{
+    color:#fff;
+}
+.accordian-open .question_icon{
+    transform: rotate(45deg);
+}
+
+/* ===========================CONTACT================================ */
+.contact_container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+}
+.contact_data{
+   display: grid; 
+   row-gap: 1.5rem;
+}
+.contact_subtitle{
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color:var(--text-color);
+    margin-bottom: var(--mb-0-5);
+}
+.contact_description{
+    font-weight: var(--font-medium);
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+.contact_icon{
+    font-size:1.25rem;
+}
+
+.contact_content{
+    margin-bottom: 30px;
+    height:2rem;
+    border-bottom:1px solid var(--first-color-alt);
+    /* background-color: red; */
+    position:relative;
+}
+.contact_input{
+    /* position: absolute; */
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    padding:1rem 1rem 1rem 0;
+    background-color: transparent;
+    border:none;
+    z-index: 1;
+    outline: none;
+    box-sizing: border-box;
+}
+.contact_label{
+    position:absolute;
+    top:-0.75rem;
+    left:0;
+    font-size:var(--small-font-size);
+    color:var(--text-color-light);
+    transition: .3s;
+}
+.contact_area{
+    height:7em;
+}
+.contact_area textarea{
+    resize: none;
+}
+/* Input focus move up label */
+
+/* Input focus sticky top label */
+
+
+/* ===========================FOOTER================================ */
+.footer_content> div{
+    margin-bottom:var(--mb-1-5);
+}
+.footer_content{
+    margin-bottom: var(--mb-2-5);
+}
+.footer_logo{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    color:var(--title-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: var(--mb-2-5);
+    transition: .3s;
+    letter-spacing: -1px;
+}    
+.footer_logo:hover{
+    color: var(--first-color);
+}
+.footer_icon{
+    font-size:1.15rem;
+    color: var(--first-color);
+}
+.footer_title{
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1-5);
+}
+.footer_subscibe{
+    background-color: var(--first-color-lighten);
+    padding:0.75rem;
+    display: flex;
+    justify-content:space-between;
+    border-radius: .5rem;
+}
+.footer_input{
+    width:70%;
+    padding:.5rem;
+    background:none;
+    outline:none;
+    border:none;
+}
+.footer_button{
+    padding:1rem;
+}
+
+.footer_data > li{
+    margin-bottom: 0.75rem;
+}
+.footer_information{
+    font-size: var(--small-font-size);
+}
+.footer_social{
+    display: inline-flex;
+    column-gap: 0.75rem;
+}
+.footer_social_link{
+    font-size: 1rem;
+    color:var(--text-color);
+    transition: .3s;
+}
+.footer_social_link:hover{
+    transform:translateY(-0.25rem);
+}
+.footer_cards{
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+.footer_card{
+    width:35px;
+}
+.footer_capy{
+     text-align: center;
+     font-size:var(--small-font-size);
+     color:var(--text-color-light);
+}
+/* ===========================SCROLL-UP================================ */
+.scrollup{
+    position:fixed;
+    background-color: var(--first-color);
+    right: 1rem;
+    /* bottom: 5rem; */
+    bottom:-30%;
+    padding:.5rem;
+    border-radius: .25rem;
+    z-index: var(--z-tooltip);
+    transition: .4s;
+    opacity: .8;
+}
+.scrollup-icon{
+    color:#fff;
+    font-size:1rem;
+}
+.scrollup:hover{
+    background-color: var(--first-color-alt);
+    opacity: 1;
+}
+/* show scroll up */
+.show_scroll_up{
+    bottom:3rem;
+}
+/* ===========================SCROLL-BAR================================ */
+::-webkit-scrollbar{
+    width:.6rem;
+    background:var(--first-color-lighten);
+}
+::-webkit-scrollbar-thumb{
+    background:var(--text-color);
+    border-radius: .5rem;
+}
+/* ===========================THEME================================ */
+
+/* ===========================Variable Dark theme================================ */
+body.dark-theme{
+    --first-color-dark:hsl(var(--hue),8%,20%);
+    --title-color:hsl(var(--hue),4%,95%);
+    --text-color:hsl(var(--hue),4%,75%);
+    --body-color:hsl(var(--hue),8%,12%);
+    --container-color:hsl(var(--hue),8%, 16%);
+}
+
+/* ===========================Color change in some parts of the website,
+                                in dark theme================================ */
+.dark-theme .steps_bg,
+.dark-theme .questions{
+    background-color:var(--first-color-dark);
+}
+.dark-theme .product_circle,
+.dark-theme .footer_subscibe{
+    background: var(--container-color);
+}
+.dark-theme .scroll_header{
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.473);
+}
+
+/* ===========================BUTTON DARK/LIGHT================================ */
+.change_theme{
+    color:var(--title-color);
+    font-size:1.25rem;
+    cursor:pointer;
+}
+.nav_btn{
+    display: inline-flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+/* ===========================BREAKPOINT================================ */
+/* FOR SMALL DEVICE */
+@media screen and (max-width:320px){
+    .container{
+        margin-left:var(--mb-1-5);
+        margin-right:var(--mb-1-5);
+    }
+    .steps_bg{
+        padding:2rem 1rem;
+    }
+    .steps_card{
+        padding:1.5rem;
+    }
+    .product_container{
+        grid-template-columns:.6fr;
+        align-items: center;
+        justify-content: center;
+    }
+}
+/* FOR MEDIUM DEVICE */
+@media screen and (min-width:576px){
+    .steps_container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1rem;
+    }
+    .product_description{
+        padding:0 4rem;
+    }
+    .product_container{
+        display: grid;
+        grid-template-columns: repeat(2,200px);
+        column-gap: 5rem;
+        justify-content: center;
+    }
+    .footer_subscibe{
+        width:400px;
+    }
+}
+
+@media screen and (min-width:767px){
+    .nav{
+        /* height:var((--header-height)+1.5rem); */
+        /* justify-content: space-between; */
+        column-gap: 3rem;
+    }
+    .nav_toggle,.nav_close{
+        display: none;
+    }
+    .nav_list,.about_container{
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+    .nav_menu{
+        margin-left:auto;
+    }
+    .home_container{
+        flex-direction: row;
+        align-items: center;
+    }
+    .home{
+        padding:8rem 0 5rem;
+    }
+    .home_img{
+        width:40%;
+        order:1;
+    }
+    .about_img{
+        width:40%;
+    }
+   .home_social{
+    top:30%;
+   }
+   .question_container{
+       display: grid;
+       grid-template-columns: repeat(2,1fr);
+       align-items: flex-start;
+   }
+   .contact_container{
+       flex-wrap: wrap;
+       flex-direction:initial;
+       row-gap: 3rem;
+   }
+   .contact_box,.contact_data,.contact_form{
+       width:50%;
+   }
+   .contact_data{
+       padding-left:5rem;
+   }
+   .footer_container{
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: space-between;
+   }
+   .footer_content{
+       width:40%;
+   }
+   .footer_subscibe{
+       width:100%;
+   }
+
+}
+
+/* FOR LARGE DEVICE */
+@media screen and (min-width:992px){
+    .container{
+        margin-left:auto;
+        margin-right:auto;
+    }
+    .section{
+        padding:8rem 0 1rem;
+    }
+    .section_title_center,.section_title{
+        font-size:var(--h1-font-size);
+    }
+    .home{
+        padding:13rem 0 5rem;
+    }
+    .home_img{
+        width:60%;
+    }
+    .about_container{
+        column-gap: 7rem;
+    }
+    .steps_container{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .steps_bg{
+        padding:3.5rem 2.5rem;
+    }
+    .steps_card_title{
+        font-size:var(--normal-font-size);
+    }
+    .product_description{
+        padding:0 2.5rem;
+    }
+    .product_container{
+        grid-template-columns: repeat(3,200px);
+        gap:4rem 6rem;
+    }
+    .question_container{
+        padding:1rem 2.5rem 4rem; 
+    }
+    .question_group{
+        row-gap: 2rem;
+    }
+    .question_header{
+        padding:1rem;
+    }
+    .question_description{
+        padding:1rem 1.5rem 1.5rem 1.5rem;
+    }
+    .footer_logo{
+        font-size:var(--h3-font-size);
+    }
+    .footer_content:nth-child(1){
+        width:30%;
+    }
+    .footer_content:not(:nth-child(1)){
+        width:15%
+    }
+}
+@media screen and (min-width:1200px){
+    .home_social{
+        right:7rem;
+        row-gap: 8rem;
+        top:50%;
+    }
+    .home_social_follow{
+        font-size:var(--small-font-size);
+    }
+    .home_social_follow::after{
+        left:150%;
+        width:2rem;
+    }
+    .home_social_link{
+        font-size:1.2rem;
+    }
+    .about_container{
+        column-gap: 9rem;
+    }
+    .scrollup{
+        right:3rem;
+    }
+}
+
+
+
+

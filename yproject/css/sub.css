@@ -1,0 +1,351 @@
+
+body,html{
+    height:100%;
+    /* background-color: black; */
+}
+.page{
+    height: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+img{
+    display: block;
+}
+section,.mainImg{
+    overflow: hidden;
+}
+
+/* *************************logo************************* */
+/* *************************logo************************* */
+.navbar{
+    /* position: fixed; */
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /* background-color:rgb(55, 32, 85); */
+    padding:10px 50px;
+    z-index: 9999;
+    transition-duration: 500ms;
+}
+.navbar_menu{
+    display: flex;
+}
+.navbar_menu > li{
+    text-align: center;
+    padding:10px 0px;
+}
+.navbar_menu > li > a{
+    display: block;
+    padding:0px 30px;
+}
+.navbar_en{
+    margin-right: 50px;
+}
+.navbar_en > select{
+    color:white;
+    border:none;
+    outline:none;
+    background-color: transparent;
+    font-size: 12px;
+}
+.navbar_en > select > option{
+    color:white;
+    background: transparent;
+}
+.navbar.sticky{
+    position: fixed;
+    top:0;left:0;
+    background-color: white;
+}
+/* toggle_btn */
+.toggle_btn{
+    width:40px;
+    height:40px;
+    font-size:20px;
+    border:none;
+    outline: none;
+    /* color:white; */
+    background-color: transparent;
+    position: absolute;
+    top:15px;
+    right:32px;
+    cursor: pointer;
+    display: none;
+}
+
+/* *************************main************************* */
+/* *************************main************************* */
+.mainImg{
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    position:relative;
+}
+.mainText{
+    font-size:100px;
+    font-weight: 900;
+    position: absolute;
+}
+.main_text_1{
+    top:30%;
+    left:300px;
+}
+.main_text_2{
+    top:500px;
+    right:300px;
+}
+.main_img_shoe{
+    position: absolute;
+    width:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+/* *************************info************************* */
+/* *************************info************************* */
+.info>pre{
+    text-align: center;
+    line-height: 45px;
+    margin:50px 0;
+}
+/* *************************product_list************************* */
+/* *************************product_list************************* */
+.product_container{
+    width:100%;
+    border-top:solid 1px black;
+}
+
+.product{
+    width:25%;
+    float: left;
+    border-bottom: black 1px solid;
+    border-right: black 1px solid;
+}
+.product > a{
+    display: block;
+    position:relative;
+}
+.product > a > img,.hover_img{
+    width:100%;
+}
+.hover_img{
+    position: absolute;
+    top:0;
+    left:0;
+    transition-duration: 200ms;
+}
+.product:hover .hover_img{
+    opacity: 0;
+}
+.box_text_left{
+    float: left;
+    padding: 10px;
+} 
+.box_text_left > a > p{
+    padding-bottom: 5px;
+}
+.box_text_left > a > p:nth-child(2){
+    color:#999;
+    font-size:14px;
+}
+.box_text_right{
+    float: right;
+    margin-top:10px;
+}
+.nothing > .box{
+    opacity: 0;
+    visibility:hidden;
+}
+/* button */
+.box_text_right>button{
+    border:none;
+    outline: none;
+    background-color: transparent;
+}
+.cls-1 {
+    fill: none;
+    stroke: #999;
+    stroke-miterlimit: 10;
+}
+
+.cls-2 {
+    fill: #999;
+}
+svg{
+    width:30px;height:30px;
+    cursor: pointer;
+}
+svg:hover .cls-1{
+    stroke: red;
+}
+svg:hover .cls-2{
+    fill: red;
+}
+
+/* *************************other collection************************* */
+/* *************************other collection************************* */
+.other_collection{
+    height: 100%;
+}
+.other_collection > h2{
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    margin: 100px 0;
+}
+.collection_box{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.coll_box{
+    width:600px;
+    border:1px solid black;
+    border-radius:500px 500px;
+    text-align: center;
+    line-height: 300px;
+    font-size: 20px;
+    font-weight: 500;
+    transition-duration: 300ms;
+    cursor: pointer;
+}
+.box1{
+    /* float:left; */
+    position:relative;
+    overflow:hidden;
+}
+.box2{
+    /* float:right; */
+    position:relative;
+    overflow:hidden;
+}
+.boxBg{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition-duration: 300ms;
+}
+.box_bg1{
+    background: url("../image/canadagoose.jpg");
+    background-size: cover;
+}
+.box_bg2{
+    background:url("../image/ugg.jpg");
+    background-size: cover;
+}
+.coll_box > span{
+    transition-duration: 300ms;
+}
+/* hover */
+.coll_box:hover .box_bg1,.coll_box:hover .box_bg2{
+    opacity: 1;
+}
+.coll_box:hover span{
+    color:#00ffff;
+}
+/* *************************footer************************* */
+.footer{
+    height:200px;
+    background-color: #e6e6e6;
+}
+.footerWrap::after{
+    content: "";
+    display:block;
+    clear: both;
+}
+.footerWrap{
+    width: fit-content;
+    margin: 0 auto;
+}
+.footerWrap > ul{
+    float:left;
+    margin:30px;
+}
+.footerWrap > ul >li{
+    line-height: 25px;
+}
+.footerWrap > ul > li > a{
+    color:black;
+    font-size: 14px;
+    font-weight: 400;
+}
+.footerWrap > ul > li > a:hover{
+    border-bottom: 1px solid black;
+}
+/* *************************mediaQuery************************* */
+/* *************************mediaQuery************************* */
+@media screen and (max-width:1024px){
+    .navbar{
+        flex-direction: column;
+        padding:20px 20px;
+        background-color: white;
+    }
+    .product{
+        width:50%;
+    }
+    .coll_box{
+        width:300px;
+    }
+   
+    .coll_box{
+        margin-bottom:15px
+    }
+    .coll_box > span{
+        font-size:16px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .navbar_menu{
+        flex-direction: column;
+        width:100%;
+        /* display:none; */
+    }
+    .navbar_menu{
+        flex-direction: column;
+        width:100%;
+        display:none;
+    }
+    /* btn */
+    .toggle_btn{
+        display:flex;
+    }
+    .navbar_menu.active{
+        display: flex;
+    }
+    .navbar.bgc{
+        background-color:white;
+        /* color:white; */
+    }
+    .coll_box{
+        height:200px;
+        width:200px;
+    }
+    .coll_box > span{
+        line-height: 200px;
+    }
+}
+
+@media screen and (max-width:414px){
+    .info> pre{
+        font-size:10px;
+        line-height: 25px;
+    }
+    .other_collection{
+        height:fit-content;
+    }
+    
+   .box_text_left > a > p:nth-child(1){
+       font-size:14px;
+   }
+   .box_text_left > a > p:nth-child(2){
+    font-size:12px;
+}
+    
+}

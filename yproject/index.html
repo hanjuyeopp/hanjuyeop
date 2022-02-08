@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/e3826f3fb7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- -----------mainpage------------ -->
+    <header class="mainImg">
+        <nav class="navbar">
+            <div class="logo"><a href="#"><img src="image/logo_2_white.png" alt=""></a></div>
+
+            <ul class="navbar_menu">
+                <li><a href="#">STORE</a></li>
+                <li><a href="#">COLLABORATION</a></li>
+                <li><a href="#">COLLECTION</a></li>
+                <li><a href="#">ACCOUNT</a></li>
+                <li><a href="#">BAG</a></li>
+            </ul>
+            <button class="toggle_btn">
+                <i class="fas fa-bars"></i>
+                <!-- <i class="fas fa-times"></i> -->
+            </button>
+        </nav>
+    </header>
+
+    <!-- -----------melissa collaboration------------ -->
+    <section class="mellisa_container">
+        <div class="coll_text">
+            <span id="span1">The</span><span>&nbsp;</span><span id="span2">Y/PROJECT</span><span>&nbsp;</span><span id="span3">X</span><span>&nbsp;</span><span id="span4">Melissa</span><span>&nbsp;</span><span id="span5">shoe</span>
+            <span id="span6">collaboration</span><span>&nbsp;</span><br><span id="span7">is</span><span>&nbsp;</span><span id="span8">a</span><span>&nbsp;</span><span id="span9">nod</span>
+            <span id="span10">to</span><span>&nbsp;</span><span id="span11">Victorian</span><span>&nbsp;</span><span id="span12">vases</span>
+        </div>
+    </section>
+
+    <!-- -----------product menu------------ -->
+    <section class="product_view">
+        <div class="women">
+            <img src="image/women.png" alt="" class="view_img">
+            <button class="view_btn"><span>WOMEN</span></button>
+        </div>
+        <div class="men">
+            <img src="image/men.png" alt="" class="view_img">
+            <button class="view_btn"><span>MEN</span></button>
+        </div>
+        <div class="pants">
+            <img src="image/pants.png" alt="" class="view_img">
+            <button class="view_btn"><span>PANTS</span></button>
+        </div>
+        <div class="knitwear">
+            <img src="image/knitwear.png" alt="" class="view_img">
+            <button class="view_btn"><span>KNITWEAR</span></button>
+        </div>
+    </section>
+
+    <!-- -----------bestItem------------ -->
+    <section class="best_item">
+        <h2>BEST</h2>
+        <div class="bestContainer">
+            <a href="#" class="bestItem">
+                <img src="image/bestItem_1.jpg2.png" alt="">
+                <div class="cart_heart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </a>
+            <a href="#" class="bestItem">
+                <img src="image/bestItem_2.png" alt="">
+                <div class="cart_heart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </a>
+            <a href="#" class="bestItem">
+                <img src="image/bestItem_3.png" alt="">
+                <div class="cart_heart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </a>
+            <a href="#" class="bestItem">
+                <img src="image/bestitem_4.png" alt="">
+                <div class="cart_heart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-heart"></i>
+            </div>
+            </a>
+          
+        </div>
+    </section>
+    <!-- -----------collection------------ -->
+    <section class="collection">
+        <h2>collection</h2>
+        <div class="collection_wrap">
+            <div class="coll_1">
+                <p>2022 S/S &nbsp; &#62&#62</p>
+            </div>
+            <div class="coll_2">
+                <p>2021 F/W &nbsp; &#62&#62</p>
+            </div>
+            <div class="coll_3">
+                <p>2020 F/W &nbsp; &#62&#62</p>
+            </div>
+            <div class="coll_4">
+                <p>2020 S/S &nbsp; &#62&#62</p>
+            </div>
+            <div class="coll_5">
+                <p>2019 F/W &nbsp; &#62&#62</p>
+            </div>
+            <div class="coll_6">
+                <p>2019 S/S &nbsp; &#62&#62</p>
+            </div>
+        </div>
+        <button id="coll_btn">
+            more collection >>
+        </button>
+    </section>
+
+    <!-- -----------footer------------ -->
+
+    <section class="footer">
+        <div class="footerWrap">
+            <ul>
+                <li><a href="#">Copyright &#169 Y/PROJECT</a></li>
+                <li><a href="#">Customer care</a></li>
+                <li><a href="#">Terms and conditions</a></li>
+                <li><a href="#">F.A.Q.</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Stockists</a></li>
+                <li><a href="#">Shipping information</a></li>
+                <li><a href="#">Stockists</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="#">
+                         <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Returns and exchanges</a></li>
+                <li><a href="#">Privacy policy</a></li>
+            </ul>
+            </div>
+            </section>
+
+    <script>
+        var toggleBtn = document.querySelector(".toggle_btn");
+        var navMenu = document.querySelector(".navbar_menu");
+        var navbar = document.querySelector(".navbar");
+        toggleBtn.addEventListener("click", () => {
+            toggleBtn.setAttribute("src","fas fa-times");
+            // navMenu.classList.toggle("active");
+            // navbar.classList.toggle("bgc");
+        })
+    </script>
+
+   
+</body>
+
+</html>
